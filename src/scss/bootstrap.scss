@@ -1,0 +1,63 @@
+@import "mixins/banner";
+@include bsBanner("");
+
+$white: #070101;
+// $white:#161819;
+
+$theme-colors: (
+    "light":      #fec9ae,
+    "dark":       #f5ead0,
+    "primary":    #fb8612,
+    "secondary":  #299fa0,
+    "info":       #482360,
+    "success":    #56a506,
+    "warning":    #ffc05d,
+    "danger":     #f20262,
+);
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "containers";
+@import "grid";
+@import "images";
+// @import "tables";
+// @import "forms";
+@import "buttons";
+// @import "transitions";
+// @import "dropdown";
+// @import "button-group";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "accordion";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "alert";
+// @import "progress";
+// @import "list-group";
+// @import "close";
+// @import "toasts";
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+@import "carousel";
+// @import "spinners";
+// @import "offcanvas";
+// @import "placeholders";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+// scss-docs-end import-stack
