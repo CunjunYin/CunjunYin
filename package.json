@@ -2,7 +2,7 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cunjunyin.github.io/cunjunyin.github.io",
+  "homepage": "https://cunjunyin.github.io",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@braintree/sanitize-url": "^6.0.0",
