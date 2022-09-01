@@ -2,20 +2,14 @@
 	"blogs": [
 		{
 			"title": "Software Quality Assurance",
-			"date": "26 January 2021",
+			"date": "26 August 2022",
 			"uri": "",
 			"pages": [
 				{
 					"title": "Introduction to Software Quality Assurance and Testing",
 					"date": "2022-07-21",
 					"uri": "/notes/SoftwareTesting&QualityAssurance/01.Introduction.md",
-					"excerpt": "This article explain key terminologies used in Software Quality Assurance(QA) and Testing and the defination of QA and Testing"
-				},
-				{
-					"title": "Virtual machine",
-					"date": "2022-07-21",
-					"uri": "/notes/MachineLearning/01.02.EndToEndML.md",
-					"excerpt": "this is End to End Machine Learning"
+					"excerpt": "This article explain key terminologies used in Software Quality Assurance(QA) and Testing. And intruduce few most common testing methods used in Information and Communication Industries"
 				}
 			]
 		},
@@ -29,24 +23,19 @@
 					"date": "2022-07-21",
 					"uri": "/notes/MachineLearning/01.Introduction.md",
 					"excerpt": "this is Machine Learning Introduction"
-				},
+				}
+			]
+		},
+		{
+			"title": "Clould Computing",
+			"date": "26 January 2022",
+			"uri": "",
+			"pages": [
 				{
-					"title": "End To End Machine Learning",
+					"title": "Introduction to Clould Computing",
 					"date": "2022-07-21",
-					"uri": "/notes/MachineLearning/02.EndToEndML.md",
-					"excerpt": "this is End To End Machine Learning"
-				},
-				{
-					"title": "Performance Measures in Machine Learning",
-					"date": "2022-07-21",
-					"uri": "/notes/MachineLearning/03.PerformanceMeasures.md",
-					"excerpt": "this is Linear Regression"
-				},
-				{
-					"title": "Basic Machine Learning Algorithms",
-					"date": "2022-07-21",
-					"uri": "/notes/MachineLearning/04.SimpleTrainingModels.md",
-					"excerpt": "this is Linear Regression"
+					"uri": "/notes/MachineLearning/01.Introduction.md",
+					"excerpt": "this is Machine Learning Introduction"
 				}
 			]
 		}

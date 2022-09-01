@@ -1,0 +1,180 @@
+:root {
+  --shadowShift: 2px;
+  --shadowBlur: 15px;
+}
+
+.page-home {
+	width: 100vw;
+	height: 100vh;
+
+	[class$="-landing"] {
+		position: relative;
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+
+	.info {
+		margin: auto;
+		width: 40%;
+		padding: 0 110px
+	}
+
+	.figure {
+		height: 90vh;
+		width: 60%;
+
+		svg {
+			width: 100%;
+			height: 90vh;
+		}
+	}
+
+	.indicator {
+		position: fixed;
+		width: 30px;
+		top: 50%;
+		right: 80px;
+		transform: translateY(-50%);
+		
+		.circular{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+			&.active .circles{
+				position: absolute;
+				.circle {
+					top: 50%;
+					left: 50%;
+					transform: translate3d(-50%, -50%, 0);
+					position: absolute;
+					background-color: transparent;
+					border: 10px solid var(--circleColor);
+					border-radius: 50%;
+					box-shadow: inset var(--shadowShift) var(--shadowShift) var(--shadowBlur) rgba(55 84 170 / 0.2),
+						var(--shadowShift) var(--shadowShift) var(--shadowBlur)rgba(55 84 170 / 0.2),
+						inset calc(var(--shadowShift) * -1) calc(var(--shadowShift) * -1)
+							var(--shadowBlur) rgba(255 255 255 / 1),
+						calc(var(--shadowShift) * -1) calc(var(--shadowShift) * -1)
+							var(--shadowBlur) rgba(255 255 255 / 1);
+					filter: blur(3px);
+				
+					animation-name: ripple;
+					animation-duration: 3s;
+					animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+					animation-iteration-count: infinite;
+	
+					&:nth-child(2) {
+						animation-delay: -1s;
+					}
+					
+					&:nth-child(3) {
+						animation-delay: -2s;
+					}
+				}
+			}
+		}
+
+		.dot {
+			position: relative;
+			width: 20px;
+			height: 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: rgb(241, 243, 246);
+			transform: rotate(45deg);
+			transition: transform 0.2s ease-out;
+			z-index: 999;
+
+			box-shadow: var(--shadowShift) 0 var(--shadowBlur) rgba(55 84 170 / 0.2),
+			calc(var(--shadowShift) * -1) 0 var(--shadowBlur) rgba(255 255 255 / 1);
+
+			&:hover {
+				cursor: pointer;
+				transform: rotate(45deg) scale(1.1);
+			}
+
+			&:focus{
+				outline: none;
+			}
+
+			&:focus-visible {
+				border-color: #89aedf;
+			}
+		}
+	}
+}
+
+.banner-landing {
+	background-image: url(./img/texture.png);
+
+	.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: auto;
+		max-width: 888px;
+		height: 100%;
+	}
+
+	svg {
+		position: absolute;
+	}
+
+	#moon {
+		max-width: 150px;
+		left: 25%;
+		top: 66px;
+		border-radius: 50%;
+		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
+		animation: pulse 2s linear 1s infinite;
+	}
+
+	#dream {
+		width: 25vw;
+		right: 80px;
+		bottom: 0;
+		z-index: -1;
+	}
+}
+
+.blog-landing {
+	background: #12c2e9;
+	background: linear-gradient(to right, rgba(18, 194, 233, 1), rgba(196, 113, 237, 0.8), rgba(246, 79, 89, 0));
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
+	}
+
+	50% {
+		box-shadow: 0 0 14px var(--bs-dark), inset 0 0 12px var(--bs-dark);
+	}
+
+	100% {
+		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
+	}
+}
+
+@keyframes ripple {
+  0% {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
