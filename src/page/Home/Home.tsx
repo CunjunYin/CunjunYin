@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
-
 import Onbording from './Landing'
 import BlogLanding from './blog-landing';
+import FooterLanding from './footer-landing';
+
 import './home.scss'
 
 interface HomeProps{}
@@ -21,11 +22,11 @@ export default class HomePage extends React.Component<HomeProps, HomeState> {
 			}
 		} else {
 			var component = this.state.component + 1;
-			if (component < 2){
+			if (component < 3){
 				this.setState({component: component})
 			}
 		}
-	}, 2000);	
+	}, 1000);	
 
 	constructor(props: HomeProps){
 		super(props);
@@ -42,6 +43,8 @@ export default class HomePage extends React.Component<HomeProps, HomeState> {
 				return <Onbording></Onbording>
 			case 1:
 				return <BlogLanding></BlogLanding>
+			case 2:
+				return <FooterLanding></FooterLanding>
 			default:
 				return <div></div>
 		}
@@ -61,20 +64,9 @@ export default class HomePage extends React.Component<HomeProps, HomeState> {
 				{this.switchPage()}
 
 				<div className='indicator'>
-					<div className={this.state.component == 0 ? "circular active": "circular"} onClick={()=>{this.setComponent(0)}}>
-						<div className='dot'></div>
-						<div className='circles'>
-							<div className='circle'></div>
-							<div className='circle'></div>
-						</div>
-					</div>
-					<div className={this.state.component == 1 ? "circular active": "circular"} onClick={()=>{this.setComponent(1)}}>
-						<div className='dot'></div>
-						<div className='circles'>
-							<div className='circle'></div>
-							<div className='circle'></div>
-						</div>
-					</div>
+					<div className={this.state.component == 0 ? "circular active": "circular"} onClick={()=>{this.setComponent(0)}}></div>
+					<div className={this.state.component == 1 ? "circular active": "circular"} onClick={()=>{this.setComponent(1)}}></div>
+					<div className={this.state.component == 2 ? "circular active": "circular"} onClick={()=>{this.setComponent(2)}}></div>
 				</div>
 			</div>
 		)

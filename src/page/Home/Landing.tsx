@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactComponent as Dream } from './img/pursue.svg';
 import { ReactComponent as Moon } from './img/moon.svg';
+import { ReactComponent as Stars } from './img/stars.svg';
 
 export default class Onbording extends React.Component {
 
@@ -14,6 +15,7 @@ export default class Onbording extends React.Component {
 				</div>
 				<Moon></Moon>
 				<Dream></Dream>
+				<Stars></Stars>
 			</div>
 		)
 	}

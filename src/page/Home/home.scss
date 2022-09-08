@@ -14,20 +14,14 @@
 		height: 100%;
 	}
 
+	.content {
+		background: transparent;
+	}
+
 	.info {
 		margin: auto;
 		width: 40%;
 		padding: 0 110px
-	}
-
-	.figure {
-		height: 90vh;
-		width: 60%;
-
-		svg {
-			width: 100%;
-			height: 90vh;
-		}
 	}
 
 	.indicator {
@@ -36,72 +30,58 @@
 		top: 50%;
 		right: 80px;
 		transform: translateY(-50%);
-		
-		.circular{
+		.circular {
 			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 20px 0;
-			&.active .circles{
+			display: block;
+			margin: 0;
+			padding: 0;
+			letter-spacing: 0;
+			border: 0;
+			background: none;
+			color: rgba(0,0,0,0);
+			width: 36px;
+			height: 36px;
+
+			&:before {
+				display: block;
 				position: absolute;
-				.circle {
-					top: 50%;
-					left: 50%;
-					transform: translate3d(-50%, -50%, 0);
-					position: absolute;
-					background-color: transparent;
-					border: 10px solid var(--circleColor);
-					border-radius: 50%;
-					box-shadow: inset var(--shadowShift) var(--shadowShift) var(--shadowBlur) rgba(55 84 170 / 0.2),
-						var(--shadowShift) var(--shadowShift) var(--shadowBlur)rgba(55 84 170 / 0.2),
-						inset calc(var(--shadowShift) * -1) calc(var(--shadowShift) * -1)
-							var(--shadowBlur) rgba(255 255 255 / 1),
-						calc(var(--shadowShift) * -1) calc(var(--shadowShift) * -1)
-							var(--shadowBlur) rgba(255 255 255 / 1);
-					filter: blur(3px);
-				
-					animation-name: ripple;
-					animation-duration: 3s;
-					animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
-					animation-iteration-count: infinite;
-	
-					&:nth-child(2) {
-						animation-delay: -1s;
-					}
-					
-					&:nth-child(3) {
-						animation-delay: -2s;
-					}
+				border-radius: 50%;
+				content: '';
+				top: 50%;
+				left: 50%;
+				width: 16px;
+				height: 16px;
+				background: #5e798b;
+				transform: translate3d(-50%, -50%, 0);
+				transition: all 0.6s cubic-bezier(0.2,1,0.3,1);
+			}
+
+			&:after {
+				position: absolute;
+				border-radius: 50%;
+				display: block;
+				content: '';
+				top: 50%;
+				left: 50%;
+				width: 16px;
+				height: 16px;
+				opacity: 0;
+				box-shadow: inset 0 0 0 3px #5e798b;
+				transform: translate3d(-50%, -50%, 0);
+				transition: all 0.6s cubic-bezier(0.2,1,0.3,1);
+			}
+
+			&.active {
+				&:before {
+					width: 12px;
+					height: 12px;
 				}
-			}
-		}
-
-		.dot {
-			position: relative;
-			width: 20px;
-			height: 20px;
-			border-radius: 5px;
-			border: none;
-			background-color: rgb(241, 243, 246);
-			transform: rotate(45deg);
-			transition: transform 0.2s ease-out;
-			z-index: 999;
-
-			box-shadow: var(--shadowShift) 0 var(--shadowBlur) rgba(55 84 170 / 0.2),
-			calc(var(--shadowShift) * -1) 0 var(--shadowBlur) rgba(255 255 255 / 1);
-
-			&:hover {
-				cursor: pointer;
-				transform: rotate(45deg) scale(1.1);
-			}
-
-			&:focus{
-				outline: none;
-			}
-
-			&:focus-visible {
-				border-color: #89aedf;
+				&:after {
+					opacity: 1;
+					width: 32px;
+					height: 32px;
+					box-shadow: inset 0 0 0 3px #c1dff9;
+				}
 			}
 		}
 	}
@@ -139,12 +119,64 @@
 		bottom: 0;
 		z-index: -1;
 	}
+
+	#stars {
+		top: 20px;
+		z-index: -2;
+	}
 }
 
 .blog-landing {
-	background: #12c2e9;
+	padding: 0 5vw;
 	background: linear-gradient(to right, rgba(18, 194, 233, 1), rgba(196, 113, 237, 0.8), rgba(246, 79, 89, 0));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	.figure {
+		height: 90vh;
+		width: 60%;
+		svg {
+			width: 100%;
+			height: 90vh;
+		}
+	}
+
+}
+
+.footer-landing {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+	>svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		height: 50vh;
+		transform: translate3D(-50%, -50%, 0);
+	}
+
+	&:before{
+		position: absolute;
+		content: '';
+		width: 100vw;
+		bottom: 0;
+		height: 50vh;
+		background-color: var(--bs-dark);
+		z-index: -1;
+	}
+
+	.social {
+		width: 50px;
+
+		.linkedin{
+			position: relative;
+		}
+	}
+
+	.licence {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		z-index: 2;
+	}
 }
 
 @keyframes pulse {

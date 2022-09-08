@@ -2,6 +2,7 @@ import React from 'react';
 import { MarkdownHttp } from '../../../services'
 import { renderMarkdown } from '../../../utils/text'
 
+import './markdown.scss'
 import './content.scss'
 
 interface ContentProps {
@@ -51,7 +52,7 @@ export class Content extends React.PureComponent<ContentProps, ContentState> {
 					<div className='catalogue' onClick={this.props.catalogue}>Catalogue</div>
 					<div className='next' onClick={this.props.next}>Next</div>
 				</div>
-				<article dangerouslySetInnerHTML={{ __html: this.state.markdown }}></article>
+				<article className="markdown" dangerouslySetInnerHTML={{ __html: this.state.markdown }}></article>
 				<div className='article-control'>
 					<div className='previous' onClick={this.props.previous}>Previous</div>
 					<div className='catalogue' onClick={this.props.catalogue}>Catalogue</div>

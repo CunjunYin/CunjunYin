@@ -15,27 +15,39 @@
 		},
 		{
 			"title": "Machine Learning",
-			"date": "26 January 2022",
+			"date": "06 September 2022",
 			"uri": "",
 			"pages": [
 				{
 					"title": "Introduction to Machine Learning",
 					"date": "2022-07-21",
 					"uri": "/notes/MachineLearning/01.Introduction.md",
-					"excerpt": "this is Machine Learning Introduction"
+					"excerpt": "This article explain some key concpet in machine learning landscape."
 				}
 			]
 		},
 		{
 			"title": "Clould Computing",
-			"date": "26 January 2022",
+			"date": "06 September 2022",
 			"uri": "",
 			"pages": [
 				{
 					"title": "Introduction to Clould Computing",
 					"date": "2022-07-21",
-					"uri": "/notes/MachineLearning/01.Introduction.md",
-					"excerpt": "this is Machine Learning Introduction"
+					"uri": "/notes/CloudComputing/01.Introduction.md",
+					"excerpt": "Explain the concept of cloud and type of services provided by cloud."
+				},
+				{
+					"title": "Virtualization",
+					"date": "####-##-##",
+					"uri": "/notes/CloudComputing/02.virtualization.md",
+					"excerpt": "Explain the virtualization technology and how it's important to cloud."
+				},
+				{
+					"title": "Virtualization: Docker",
+					"date": "####-##-##",
+					"uri": "/notes/CloudComputing/03.docker.md",
+					"excerpt": "Docker"
 				}
 			]
 		}

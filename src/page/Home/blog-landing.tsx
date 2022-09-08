@@ -25,9 +25,7 @@ export default class BlogLanding extends React.Component {
               </div>
             </Link>
           </div>
-          <div className='figure'>
-            <Write></Write>
-          </div>
+          <div className='figure'><Write></Write></div>
         </div>
     )
   }
