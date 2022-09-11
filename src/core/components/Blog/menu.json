@@ -7,8 +7,8 @@
 			"pages": [
 				{
 					"title": "Introduction to Software Quality Assurance and Testing",
-					"date": "2022-07-21",
-					"uri": "/notes/SoftwareTesting&QualityAssurance/01.Introduction.md",
+					"date": "07 September 2022",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/SoftwareTesting&QualityAssurance/01.Introduction.md",
 					"excerpt": "This article explain key terminologies used in Software Quality Assurance(QA) and Testing. And intruduce few most common testing methods used in Information and Communication Industries"
 				}
 			]
@@ -34,19 +34,19 @@
 				{
 					"title": "Introduction to Clould Computing",
 					"date": "2022-07-21",
-					"uri": "/notes/CloudComputing/01.Introduction.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/01.Introduction.md",
 					"excerpt": "Explain the concept of cloud and type of services provided by cloud."
 				},
 				{
 					"title": "Virtualization",
 					"date": "####-##-##",
-					"uri": "/notes/CloudComputing/02.virtualization.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/02.virtualization.md",
 					"excerpt": "Explain the virtualization technology and how it's important to cloud."
 				},
 				{
 					"title": "Virtualization: Docker",
 					"date": "####-##-##",
-					"uri": "/notes/CloudComputing/03.docker.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/03.docker.md",
 					"excerpt": "Docker"
 				}
 			]
