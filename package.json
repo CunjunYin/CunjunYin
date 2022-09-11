@@ -2,7 +2,7 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cunjunyin.github.io/cunjunyin",
+  "homepage": "https://cunjunyin.github.io",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@braintree/sanitize-url": "^6.0.0",
@@ -69,7 +69,7 @@
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^6.4.1",
-    "xss": "^1.0.13"
+    "xss": "^1.0.14"
   },
   "scripts": {
     "predeploy": "GENERATE_SOURCEMAP=false npm run build",
