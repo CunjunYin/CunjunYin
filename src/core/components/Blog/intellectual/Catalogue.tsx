@@ -39,7 +39,7 @@ export class Catalogue extends React.Component<CatalogueProps, CatalogueState> {
 
 	handlePrevious() {
 		if (this.state.article < 1) {
-			toast.warning("No previous")
+			toast.warning("First Page Reached")
 		} else {
 			this.setState({
 				article: this.state.article - 1
@@ -53,7 +53,7 @@ export class Catalogue extends React.Component<CatalogueProps, CatalogueState> {
 
 	handleNext() {
 		if (this.state.article == this.props.blogs.length - 1) {
-			toast.warning("No Next")
+			toast.warning("Last Page Reached")
 		} else {
 			this.setState({
 				article: this.state.article + 1

@@ -11,7 +11,7 @@ export default class Onbording extends React.Component {
 				<div className="content">
 					<h3>Hi guest</h3>
 					<p>Enjoy exploring this site.</p>
-					<p>Although there is nothing here right now</p>
+					<p>Although everything it's in development</p>
 				</div>
 				<Moon></Moon>
 				<Dream></Dream>
