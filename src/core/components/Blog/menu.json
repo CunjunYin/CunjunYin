@@ -8,8 +8,14 @@
 				{
 					"title": "Introduction to Software Quality Assurance and Testing",
 					"date": "07 September 2022",
-					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/SoftwareTesting&QualityAssurance/01.Introduction.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/SoftwareTesting&QualityAssurance/01.Introduction.md",
 					"excerpt": "This article explain key terminologies used in Software Quality Assurance(QA) and Testing. And intruduce few most common testing methods used in Information and Communication Industries"
+				},
+				{
+					"title": "Unit Testing",
+					"date": "## #### ####",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/SoftwareTesting&QualityAssurance/02.UnitTesting.md",
+					"excerpt": "Process to do unit testing and types of unit testing"
 				}
 			]
 		},
@@ -21,7 +27,7 @@
 				{
 					"title": "Introduction to Machine Learning",
 					"date": "2022-07-21",
-					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/MachineLearning/01.Introduction.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/MachineLearning/01.Introduction.md",
 					"excerpt": "This article explain some key concpet in machine learning landscape."
 				}
 			]
@@ -34,19 +40,19 @@
 				{
 					"title": "Introduction to Clould Computing",
 					"date": "2022-07-21",
-					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/01.Introduction.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/CloudComputing/01.Introduction.md",
 					"excerpt": "Explain the concept of cloud and type of services provided by cloud."
 				},
 				{
 					"title": "Virtualization",
 					"date": "####-##-##",
-					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/02.virtualization.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/CloudComputing/02.virtualization.md",
 					"excerpt": "Explain the virtualization technology and how it's important to cloud."
 				},
 				{
 					"title": "Virtualization: Docker",
 					"date": "####-##-##",
-					"uri": "https://raw.githubusercontent.com/CunjunYin/cunjunyin.github.io/main/public/Notes/CloudComputing/03.docker.md",
+					"uri": "https://raw.githubusercontent.com/CunjunYin/notes/main/CloudComputing/03.docker.md",
 					"excerpt": "Docker"
 				}
 			]
