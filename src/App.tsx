@@ -1,23 +1,22 @@
 import React, { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HomePage, TaxonomyPage, BlogPage} from './page'
+import {Header, Footer} from './core/components'
+import { Main } from './page'
 import 'react-toastify/dist/ReactToastify.css';
-import './scss/bootstrap.scss'
-
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
   return (
-    <Router>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/taxonomy" element={<TaxonomyPage />} />
-        </Routes>
-        <ToastContainer />
-      </Suspense>
-  </Router>
+    <>
+      <Header></Header>
+      <Main></Main>
+      <Footer></Footer>
+      <ToastContainer></ToastContainer>
+    </>
   );
 }
 

@@ -1,10 +1,10 @@
+import Main from "./Main"
 import HomePage from "./Home/Home";
 import BlogPage from "./Blog";
-import TaxonomyPage from "./Taxonomy/Taxonomy";
 
 
 export {
+    Main,
     HomePage,
     BlogPage,
-    TaxonomyPage,
 }
