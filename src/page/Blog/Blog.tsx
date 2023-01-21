@@ -33,6 +33,7 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
 
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.handleMenuItemClick = this.handleMenuItemClick.bind(this);
+    this.updateShowCatalogue = this.updateShowCatalogue.bind(this);
   }
 
   toggleDrawer(anchor: string, open: boolean, event: React.KeyboardEvent | React.MouseEvent) {

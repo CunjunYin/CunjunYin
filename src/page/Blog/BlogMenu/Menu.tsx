@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from './MenuItem'
+import './Menu.scss'
 
 interface MenuProps {
   className?: string
@@ -33,7 +34,7 @@ export default class SideMenu extends React.Component<MenuProps, MenuState> {
   render() {
     var extraClass = this.props.className ? this.props.className : '';
     return (
-      <div className={`sidebar ${extraClass}`}>
+      <div className={`blog-menu ${extraClass}`}>
         <div className='menu-body'>
           {
             this.props.menu.map((item: any, index: number) => (

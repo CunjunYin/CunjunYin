@@ -27,12 +27,13 @@ export default class MenuItem extends React.Component<MenuItemProps, MenuItemSta
 		var extraClass = this.props.className ? this.props.className : '';
 		extraClass = this.props.active ? "active" : '';
 		return (
-			<div
+			<a
 				className={`item ${extraClass}`}
 				onClick={(e) => { this.props.click(this.props.index) }}
+				style={{display:'block'}}
 			>
 				<span className='description'>{this.props.item.title}</span>
-			</div>
+			</a>
 		)
 	}
 }
