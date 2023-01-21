@@ -1,11 +1,11 @@
 import React from 'react';
-import { MarkdownHttp } from '../../../services'
-import { renderMarkdown } from '../../../utils/text'
+import { MarkdownHttp } from '../../../core/services'
+import { renderMarkdown } from '../../../core/utils/text'
 
 import './markdown.scss'
 import './content.scss'
 
-interface ContentProps {
+interface PaperProps {
 	className?: string
 	uri: string
 	next: ()=>void
@@ -13,13 +13,13 @@ interface ContentProps {
 	previous: ()=>void
 }
 
-interface ContentState {
+interface PaperState {
 	isLoading: boolean
 	markdown: string
 }
 
-export class Content extends React.PureComponent<ContentProps, ContentState> {
-	constructor(props: ContentProps) {
+export class Paper extends React.PureComponent<PaperProps, PaperState> {
+	constructor(props: PaperProps) {
 		super(props);
 		this.state = {
 			isLoading: true,

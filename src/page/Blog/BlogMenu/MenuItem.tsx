@@ -1,6 +1,4 @@
 import React from 'react';
-import { BreadcrumbMeta } from '../../../../types';
-
 
 interface MenuItemProps {
 	className?: string

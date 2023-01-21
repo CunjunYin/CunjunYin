@@ -1,6 +1,5 @@
 import React from 'react';
-import SideMenu from './menu/menu';
-import { Catalogue } from './intellectual/Catalogue';
+import { Catalogue } from '../../../page/Blog/Paper/Catalogue';
 import { BlogMenu, BreadcrumbMeta} from '../../../types'
 import menu from './menu.json';
 
@@ -54,10 +53,6 @@ export default class Blog extends React.Component<BlogProps, BlogState> {
     return (
       <>
         <div className='blogs'>
-          <SideMenu
-            menu={this.state.menu}
-            itemClick={this.handleMenuItemClick}
-          />
           <div className='blog-content'>
               <div className='content-banner'>
                 <div className='title'>{this.state.menu[this.state.currentMenu].title}</div>

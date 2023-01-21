@@ -1,6 +1,6 @@
 import Main from "./Main"
 import HomePage from "./Home/Home";
-import BlogPage from "./Blog";
+import BlogPage from "./Blog/Blog";
 
 
 export {
