@@ -70,7 +70,7 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
             className="menu-opener"
             onClick={(e: any) => { this.toggleDrawer('left', true, e) }}
           >
-            Menu
+            <div className='menu-icon'>Menu</div>
           </Button>
           <Drawer
             anchor='left'
