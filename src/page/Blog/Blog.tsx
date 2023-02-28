@@ -10,13 +10,16 @@ import { SideMenu } from './BlogMenu';
 import menu from './menu.json';
 import './Blog.scss'
 
-interface BlogPageProps { }
+interface BlogPageProps {
+  theme: string
+}
 
 interface BlogPageState {
   isDrawerOpen: boolean,
   showCatalouge: boolean
   menu: any
-  currentMenu: number
+  currentMenu: number,
+  theme: string
 }
 
 export default class BlogPage extends React.Component<BlogPageProps, BlogPageState>{
@@ -28,12 +31,19 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
       isDrawerOpen: false,
       showCatalouge: true,
       menu: menu.blogs,
-      currentMenu: 0
+      currentMenu: 0,
+      theme: this.props.theme,
     };
 
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.handleMenuItemClick = this.handleMenuItemClick.bind(this);
     this.updateShowCatalogue = this.updateShowCatalogue.bind(this);
+  }
+
+  componentDidUpdate(prevProps: BlogPageProps) {
+    if (this.props.theme != prevProps.theme) {
+      this.setState({theme: this.props.theme})
+    }
   }
 
   toggleDrawer(anchor: string, open: boolean, event: React.KeyboardEvent | React.MouseEvent) {

@@ -1,6 +1,5 @@
-import React, { Suspense } from 'react';
+import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {Header, Footer} from './core/components'
 import { Main } from './page'
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,10 +9,16 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 function App() {
+  const [theme, setTheme] = useState<string>('light');
+  
+  let handleThemeChange = (theme: string) => {
+    setTheme(theme);
+  }
+
   return (
     <>
-      <Header></Header>
-      <Main></Main>
+      <Header handleThemeChange={handleThemeChange}></Header>
+      <Main theme={theme}></Main>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </>

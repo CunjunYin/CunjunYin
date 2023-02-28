@@ -9,7 +9,7 @@ import { ReactComponent as Rabbit } from './inkrabbit.svg';
 import './Header.scss'
 
 interface HeaderProps {
-
+    handleThemeChange: (theme: string) => void
 }
 
 interface HeaderState {
@@ -65,6 +65,7 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
         }
         this.setCookie('theme', theme);
         this.setState({ theme: theme });
+        this.props.handleThemeChange(theme);
     }
 
     render() {
