@@ -3,13 +3,51 @@
     height: 100%;
     background: #212529;
 
-    .item {
-        cursor: pointer;
-        font-size: 0.75rem;
-        padding: 0.4rem 0.5rem;
+    .MuiList-root {
+        padding: 0;
+        text-transform: none;
+    }
 
-        &:hover {
-            background: #1a1d20;
+    .MuiMenuItem-root {
+        display: block;
+    }
+
+    >.MuiList-root {
+        .MuiMenuItem-root {
+            overflow: hidden;
+            .MuiList-root{
+                max-height: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                transition: max-height 1s ease-out;
+                button {
+                    padding: 0px 0px;
+                }
+            }
+
+            >button {
+                text-transform: none;
+                width: 100%;
+                justify-content: space-between;
+                svg {
+                    transform: rotate(0deg);
+                }
+            }
+
+            &.active {
+                >.MuiList-root{
+                    max-height: 1000px;
+                    transition: max-height 2s ease-in;
+
+                    >button {
+                        max-height: 100px;
+                    }
+                }
+
+                >button svg{
+                    transform: rotate(90deg);
+                }
+            }
         }
     }
 }

@@ -7,7 +7,8 @@ import {
 } from '@mui/material';
 import { Catalogue } from './Paper'
 import { SideMenu } from './BlogMenu';
-import menu from './menu.json';
+import { MenuType } from './Types/MentType';
+import { menu } from './menu';
 import './Blog.scss'
 
 interface BlogPageProps {
@@ -17,8 +18,7 @@ interface BlogPageProps {
 interface BlogPageState {
   isDrawerOpen: boolean,
   showCatalouge: boolean
-  menu: any
-  currentMenu: number,
+  currentMenu: MenuType,
   theme: string
 }
 
@@ -30,13 +30,12 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
     this.state = {
       isDrawerOpen: false,
       showCatalouge: true,
-      menu: menu.blogs,
-      currentMenu: 0,
+      currentMenu: menu.children[0],
       theme: this.props.theme,
     };
 
     this.toggleDrawer = this.toggleDrawer.bind(this);
-    this.handleMenuItemClick = this.handleMenuItemClick.bind(this);
+    this.handleMenuUpdate = this.handleMenuUpdate.bind(this);
     this.updateShowCatalogue = this.updateShowCatalogue.bind(this);
   }
 
@@ -59,9 +58,9 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
     this.setState({ isDrawerOpen: open });
   }
 
-  handleMenuItemClick(index: number): void {
+  handleMenuUpdate(menu: MenuType): void {
     this.setState({
-      currentMenu: index,
+      currentMenu: menu,
       showCatalouge: true
     });
   }
@@ -69,7 +68,7 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
   updateShowCatalogue(state: boolean) {
     this.setState({
       showCatalouge: state
-    }, () => { console.log(this.state.showCatalouge) });
+    });
   }
 
   render() {
@@ -87,11 +86,11 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
             open={this.state.isDrawerOpen}
             onClose={(e: any) => { this.toggleDrawer('left', false, e) }}
           >
-            <SideMenu menu={this.state.menu} itemClick={this.handleMenuItemClick}></SideMenu>
+            <SideMenu menu={menu} updateMenu={this.handleMenuUpdate}></SideMenu>
           </Drawer>
           <Paper elevation={3}>
             <Catalogue
-              blogs={this.state.menu[this.state.currentMenu].pages}
+              blogs={this.state.currentMenu.children}
               showCatalogue={this.state.showCatalouge}
               updateShowCatalogue={this.updateShowCatalogue}
             />
