@@ -70,7 +70,7 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
 
     render() {
         return (
-            <AppBar position="fixed" style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
+            <AppBar position="fixed" style={{backgroundColor: '#e2e2e2'}}>
                 <Container maxWidth="lg">
                     <Grid display="flex" justifyContent="space-between" alignItems="center">
                         <Grid display="flex" justifyContent="start" alignItems="center">
