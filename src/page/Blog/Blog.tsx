@@ -12,14 +12,12 @@ import { menu } from './menu';
 import './Blog.scss'
 
 interface BlogPageProps {
-  theme: string
 }
 
 interface BlogPageState {
   isDrawerOpen: boolean,
   showCatalouge: boolean
-  currentMenu: MenuType,
-  theme: string
+  currentMenu: MenuType
 }
 
 export default class BlogPage extends React.Component<BlogPageProps, BlogPageState>{
@@ -30,19 +28,12 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
     this.state = {
       isDrawerOpen: false,
       showCatalouge: true,
-      currentMenu: menu.children[0],
-      theme: this.props.theme,
+      currentMenu: menu.children[0]
     };
 
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.handleMenuUpdate = this.handleMenuUpdate.bind(this);
     this.updateShowCatalogue = this.updateShowCatalogue.bind(this);
-  }
-
-  componentDidUpdate(prevProps: BlogPageProps) {
-    if (this.props.theme != prevProps.theme) {
-      this.setState({theme: this.props.theme})
-    }
   }
 
   toggleDrawer(anchor: string, open: boolean, event: React.KeyboardEvent | React.MouseEvent) {

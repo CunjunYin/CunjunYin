@@ -9,65 +9,12 @@ import { ReactComponent as Rabbit } from './inkrabbit.svg';
 import './Header.scss'
 
 interface HeaderProps {
-    handleThemeChange: (theme: string) => void
 }
 
 interface HeaderState {
-    theme: string
 }
 
 export default class Header extends React.Component<HeaderProps, HeaderState> {
-    constructor(props: HeaderProps) {
-        super(props);
-
-        this.state = {
-            theme: this.getCookie('theme')
-        }
-
-        this.handleSwitchChange = this.handleSwitchChange.bind(this);
-    }
-
-    setCookie(name: string, value: any): void{
-        document.cookie = name + "=" + value + ";path=/";
-    }
-
-    getCookie(name: string): any {
-        let cname = name + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(cname) == 0) {
-                return c.substring(cname.length, c.length);
-            }
-        }
-
-        return "";
-    }
-
-    checkCookie(name: string): boolean {
-        if (this.getCookie(name) != "") {
-            return true
-        }
-
-        return false
-    }
-
-    handleSwitchChange(event: React.ChangeEvent<HTMLInputElement>) {
-        var theme = '';
-        if(this.checkCookie('theme')) {
-            theme = this.getCookie('theme') == 'dark'? 'light': 'dark';
-        }else {
-            theme = 'dark';
-        }
-        this.setCookie('theme', theme);
-        this.setState({ theme: theme });
-        this.props.handleThemeChange(theme);
-    }
-
     render() {
         return (
             <AppBar position="fixed" style={{backgroundColor: '#e2e2e2'}}>
@@ -86,9 +33,6 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
                                 <a href="/blog">Blogs</a>
                             </div>
                         </Grid>
-                        <div>
-                            <Switch checked={this.state.theme=='dark'} onChange={this.handleSwitchChange} />
-                        </div>
                     </Grid>
                 </Container>
             </AppBar>

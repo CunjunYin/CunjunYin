@@ -9,16 +9,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 function App() {
-  const [theme, setTheme] = useState<string>('light');
-  
-  let handleThemeChange = (theme: string) => {
-    setTheme(theme);
-  }
-
   return (
     <>
-      <Header handleThemeChange={handleThemeChange}></Header>
-      <Main theme={theme}></Main>
+      <Header></Header>
+      <Main></Main>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </>
