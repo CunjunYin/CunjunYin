@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { Header, Footer } from './core/components'
 import { Main } from './page'
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
 import { light } from './theme';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 
-const ColorModeContext = React.createContext(light);
 function App() {
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const theme = React.useMemo(() => createTheme(light), [mode]);
   return (
-    <ColorModeContext.Provider value={colorMode}>
+    <>
       <ThemeProvider theme={theme}>
         <Header></Header>
-        <Main></Main>
-        <Footer></Footer>
       </ThemeProvider>
-    </ColorModeContext.Provider>
+      <ThemeProvider theme={theme}>
+        <Main></Main>
+      </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Footer theme={theme}></Footer>
+      </ThemeProvider>
+    </>
   );
 }
 
