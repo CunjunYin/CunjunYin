@@ -1,70 +1,48 @@
-// :root {
-//   --shadowShift: 2px;
-//   --shadowBlur: 15px;
-// }
-
-.banner{
-	height: 100vh;
-	background-color: #121519;
-	background-image: url(./img/texture.png);
-
-	.container {
-		height: 100vh;
-	}
-
-
-	svg {
-		position: absolute;
-	}
-
-	#moon {
-		max-width: 150px;
-		left: 25%;
-		top: 66px;
-		border-radius: 50%;
-		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
-		animation: pulse 2s linear 1s infinite;
-	}
-
-	#dream {
-		width: 25vw;
-		right: 80px;
-		bottom: 0;
-	}
-
-	#stars {
-		top: 20px;
-	}
+@mixin absolute-center($top: 50%) {
+	position: absolute;
+	top: $top;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
 }
 
-// @keyframes pulse {
-// 	0% {
-// 		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
-// 	}
+.banner {
+	display: flex;
+	height: 100vh;
+	background-color: #121519;
+	background-image: url(./img/pexels.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 
-// 	50% {
-// 		box-shadow: 0 0 14px var(--bs-dark), inset 0 0 12px var(--bs-dark);
-// 	}
+	.banner-content {
+		position: relative;
+		height: 440px;
+		color: rgba(255, 255, 255, .94);
+		box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .2) inset, 0 1px 1px rgba(0, 0, 0, .3);
+		text-shadow: 0 1px 1px rgba(25, 25, 25, .5);
+		background: rgba(255, 255, 255, .06);
+		overflow: hidden;
 
-// 	100% {
-// 		box-shadow: 0 0 10px var(--bs-dark), inset 0 0 10px var(--bs-dark);
-// 	}
-// }
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			margin: -20px;
+			filter: blur(6px);
+			transition:
+				all .2s ease-in-out,
+				filter .8s .22s ease-in-out;
+		}
 
-// @keyframes ripple {
-//   0% {
-//     top: 0;
-//     left: 0;
-//     width: 0;
-//     height: 0;
-//     opacity: 1;
-//   }
-
-//   100% {
-//     top: 0;
-//     left: 0;
-//     width: 80px;
-//     height: 80px;
-//     opacity: 0;
-//   }
-// }
+		&>h1 {
+			@include absolute-center();
+			font-size: 5rem;
+			margin-top: 0;
+			transition: all .2s ease-in-out;
+		}
+	}
+}
