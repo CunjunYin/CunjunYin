@@ -1,10 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material'
 import { MarkdownHttp } from '../../../core/services'
-import { renderMarkdown } from '../../../core/utils/text'
+import ReactMarkdown from 'react-markdown'
 import 'github-markdown-css/github-markdown-dark.css'
-
-// import './markdown.scss'
 import './content.scss'
 
 interface PaperProps {
@@ -21,7 +19,6 @@ interface PaperState {
 }
 
 export class Paper extends React.PureComponent<PaperProps, PaperState> {
-	theme = 'light'
 	constructor(props: PaperProps) {
 		super(props);
 		this.state = {
@@ -34,7 +31,7 @@ export class Paper extends React.PureComponent<PaperProps, PaperState> {
 		if (this.props.uri) {
 			const response = await MarkdownHttp.getFile(this.props.uri);
 			if (response.success) {
-				this.setState({ markdown: renderMarkdown(response.body) });
+				this.setState({ markdown: response.body });
 			}
 		}
 	}
@@ -49,13 +46,16 @@ export class Paper extends React.PureComponent<PaperProps, PaperState> {
 
 	render() {
 		return (
-			<Box style={{background: this.theme=='light'? '#ffffff': '#0d1117'}}>
+			<Box >
 				<div className='article-control mb-4' style={{paddingTop:"1rem"}}>
 					<div className='previous' onClick={this.props.previous}>Previous</div>
 					<div className='menu' onClick={this.props.catalogue}>Catalogue</div>
 					<div className='next' onClick={this.props.next}>Next</div>
 				</div>
-				<article className="markdown markdown-body" dangerouslySetInnerHTML={{ __html: this.state.markdown }}></article>
+				{
+					// eslint-disable-next-line
+					<ReactMarkdown children={this.state.markdown}></ReactMarkdown>
+				}
 				<div className='article-control' style={{paddingBottom:"1rem"}}>
 					<div className='previous' onClick={this.props.previous}>Previous</div>
 					<div className='menu' onClick={this.props.catalogue}>Catalogue</div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import {
+	Box,
 	Container,
-	Grid
+	Grid,
+	Link
 } from '@mui/material';
 import OtherHousesOutlinedIcon from '@mui/icons-material/OtherHousesOutlined';
 import BookOutlinedIcon from '@mui/icons-material/BookOutlined';
@@ -18,36 +20,42 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
 	render() {
 		return (
 			<header>
-				<Container className="header-content" maxWidth="lg">
-					<Grid display="flex" justifyContent="space-between" alignItems="center">
-						<div className="left">
-							<div className="logo">
-								<a className="brand" href="/">
-									<span className="zodiac">
-										<Rabbit></Rabbit>
-									</span>
-									Cunjun Yin
-								</a>
+				<Box sx={{
+					backgroundColor: "background.paper"
+				}}>
+					<Container className="header-content" maxWidth="lg">
+						<Grid display="flex" justifyContent="space-between" alignItems="center">
+							<div className="left">
+								<div className="logo">
+									<Link className="brand" href="/">
+										<span className="zodiac">
+											<Rabbit></Rabbit>
+										</span>
+										Cunjun Yin
+									</Link>
+								</div>
 							</div>
-						</div>
-						<div className="right">
-							<ul className="menu">
-								<li className="menu-item">
-									<a href="/">
-										<OtherHousesOutlinedIcon></OtherHousesOutlinedIcon>
-										<span>Home</span>
-									</a>
-								</li>
-								<li className="menu-item">
-									<a href="/blog">
-										<BookOutlinedIcon></BookOutlinedIcon>
-										<span>Blogs</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</Grid>
-				</Container>
+							<div className="right">
+								<ul className="menu">
+									<li className="menu-item">
+										<Link href="/">
+											<OtherHousesOutlinedIcon></OtherHousesOutlinedIcon>
+											<span>Home</span>
+											<Box className='hover-effect' sx={{backgroundColor: "primary.main"}}></Box>
+										</Link>
+									</li>
+									<li className="menu-item">
+										<Link href="/blog">
+											<BookOutlinedIcon></BookOutlinedIcon>
+											<span>Blogs</span>
+											<Box className='hover-effect' sx={{backgroundColor: "primary.main"}}></Box>
+										</Link>
+									</li>
+								</ul>
+							</div>
+						</Grid>
+					</Container>
+				</Box>
 			</header>
 		)
 	}
