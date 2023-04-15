@@ -1,1 +1,2 @@
-export * from "./Taxonomy";
+export * from './Blog'
+export * from './Breadcrumb'

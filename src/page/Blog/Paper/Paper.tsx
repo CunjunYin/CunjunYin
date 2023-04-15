@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material'
 import { MarkdownHttp } from '../../../core/services'
 import { renderMarkdown } from '../../../core/utils/text'
-import 'github-markdown-css/github-markdown-light.css'
+import 'github-markdown-css/github-markdown-dark.css'
 
 // import './markdown.scss'
 import './content.scss'

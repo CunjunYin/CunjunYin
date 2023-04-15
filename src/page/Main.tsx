@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Home/Home';
 import BlogPage from './Blog/Blog';
-import { Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 interface MainProps {
 }
@@ -19,13 +19,15 @@ export default class Main extends React.Component<MainProps, MainState> {
 
   render() {
     return (
-      <main className='MuiTypography-body'>
-        <Router>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/blog' element={<BlogPage/>} />
-          </Routes>
-        </Router>
+      <main>
+        <Box sx={{ backgroundColor: 'background.default' }}>
+          <Router>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/blog' element={<BlogPage/>} />
+            </Routes>
+          </Router>
+        </Box>
       </main>
     )
   }

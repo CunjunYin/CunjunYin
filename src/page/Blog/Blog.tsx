@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Box,
   Button,
   Container,
   Drawer,
@@ -64,7 +65,10 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
 
   render() {
     return (
-      <div className='page-blog'>
+      <Box className='page-blog' sx={{
+        paddingTop: "6rem",
+        paddingBottom: "6rem"
+      }}>
         <Container>
           <Button
             className="menu-opener"
@@ -87,7 +91,7 @@ export default class BlogPage extends React.Component<BlogPageProps, BlogPageSta
             />
           </Paper>
         </Container>
-      </div>
+      </Box>
     )
   }
 }

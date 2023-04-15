@@ -1,6 +1,6 @@
 import React from 'react';
 import { Catalogue } from '../../../page/Blog/Paper/Catalogue';
-import { BlogMenu, BreadcrumbMeta} from '../../../types'
+import { BlogMenu, BreadcrumbMeta} from '../../types'
 import menu from './menu.json';
 
 import "./blog.scss";

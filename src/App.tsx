@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Header, Footer } from './core/components'
+import React from 'react';
+import { Header, Footer } from './components'
 import { Main } from './page'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
@@ -17,7 +17,7 @@ function App() {
         <Main></Main>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
-        <Footer theme={theme}></Footer>
+        <Footer></Footer>
       </ThemeProvider>
     </>
   );
