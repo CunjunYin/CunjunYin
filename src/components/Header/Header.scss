@@ -81,3 +81,23 @@ header {
 		}
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.logo {
+		.brand {
+			font-size: 1rem;
+		}
+	
+		.zodiac {
+			margin-right: .25rem;
+		}
+	
+		svg {
+			width: 2rem;
+		}
+	}
+
+	.menu {
+		font-size: 1rem;
+	}
+}

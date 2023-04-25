@@ -26,7 +26,7 @@ export default class Footer extends React.Component<FooterProps, FooterState> {
 			<footer>
 				<Box sx={{ backgroundColor: 'background.paper' }}>
 					<Container maxWidth="lg" style={{ padding: '2rem 0' }}>
-						<Typography variant="h3" textAlign='center' marginBottom="1rem" color="text.primary">Cunjun Yin</Typography>
+						<Typography variant="h3" textAlign='center' marginBottom='1rem' color='text.primary'>Cunjun Yin</Typography>
 						<Grid className='socials' display='flex' justifyContent='center'>
 							<nav>
 								<a className='linkedin' href="https://www.linkedin.com/in/cunjunyin/" target="_blank" rel="noopener noreferrer">
@@ -38,7 +38,7 @@ export default class Footer extends React.Component<FooterProps, FooterState> {
 							</nav>
 						</Grid>
 						<Grid className='site-navigation' display='flex' justifyContent='center'>
-							<nav>
+							<nav className='social-media'>
 								<a href="/">Home</a>
 								<a href="/">About Me</a>
 								<a href="blog">Blog</a>

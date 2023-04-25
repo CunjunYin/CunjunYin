@@ -5,7 +5,11 @@ footer {
     }
     .socials {
         padding: 1rem 0;
+        nav{
+            display: flex
+        }
         a {
+            padding: 6px;
             margin: 0 0.5rem;
         }
     }
@@ -18,5 +22,11 @@ footer {
     .bottom {
         font-size: 0.8rem;
         padding: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h3{
+        font-size: 2rem;
     }
 }

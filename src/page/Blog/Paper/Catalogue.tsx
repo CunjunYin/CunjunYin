@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+	Box,
 	Button,
 } from '@mui/material'
 import { Paper } from './Paper';
@@ -68,14 +69,14 @@ export class Catalogue extends React.Component<CatalogueProps, CatalogueState> {
 					this.props.showCatalogue ? (
 						this.props.blogs.map((item: any, index: number) => (
 							<div className='catalogue mb-4' key={index}>
-								<div className='catalogue-img' style={{background: item.background ? item.background: "#2196f3"}}></div>
+								<div className='catalogue-img' style={{ background: item.background ? item.background : "#2196f3" }}></div>
 								<div className='catalogue-content'>
 									<div className='info'>
 										<div className='date mb-2'>{item.date}</div>
 										<h4 className='title mb-2'>{item.title}</h4>
 										<div className='excerpt mb-5'>{item.excerpt}</div>
 									</div>
-									<Button 
+									<Button
 										className='btn btn-primary'
 										onClick={() => { this.handleReadmoreClick(item, index) }}
 									>
@@ -85,12 +86,17 @@ export class Catalogue extends React.Component<CatalogueProps, CatalogueState> {
 							</div>
 						))
 					) : (
-						<Paper
-							uri={this.props.blogs[this.state.article].uri}
-							next={this.handleNext}
-							catalogue={this.handleCatalogue}
-							previous={this.handlePrevious}
-						/>
+						<Box>
+							<Box className="paper-nav">
+								asd
+							</Box>
+							<Paper
+								uri={this.props.blogs[this.state.article].uri}
+								next={this.handleNext}
+								catalogue={this.handleCatalogue}
+								previous={this.handlePrevious}
+							/>
+						</Box>
 					)
 				}
 			</div>
